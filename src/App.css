@@ -5,3 +5,11 @@
   --twitter-grey: rgba(189, 189, 189, 0.573);
   --twitter-white: white;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
