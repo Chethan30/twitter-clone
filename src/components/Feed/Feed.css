@@ -1,0 +1,23 @@
+.feed {
+  flex: 0.5;
+  border-right: 0.5px solid var(--twitter-grey);
+  min-width: fit-content;
+  overflow-y: scroll;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed-header {
+  position: sticky;
+  top: 0;
+  padding: 10px 20px;
+  z-index: 100;
+  /* Background Blur effect */
+  background: rgba(255, 255, 256, 0.85);
+  backdrop-filter: blur(18px);
+}
