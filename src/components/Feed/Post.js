@@ -12,27 +12,22 @@ function Post({ displayName, username, verified, text, image, avatar }) {
   return (
     <div className="post">
       <div className="post-avatar">
-        <Avatar src="https://pbs.twimg.com/profile_images/1611146767545819138/3E124W3n_400x400.jpg"></Avatar>
+        <Avatar src={avatar}></Avatar>
       </div>
       <div className="post-body">
         <div className="post-header">
           <div className="post-header-text">
             <h3>
-              Chethan
-              <span>
-                <VerifiedIcon className="post-badge" />
-              </span>
+              {displayName}
+              <span>{verified && <VerifiedIcon className="post-badge" />}</span>
             </h3>
-            <span className="post-username">@Chethan</span>
+            <span className="post-username">@{username}</span>
             <span className="post-time"> · 14h</span>
           </div>
           <div className="header-desc">
-            <p>Text goes here!</p>
+            <p>{text}</p>
           </div>
-          <img
-            src="https://media0.giphy.com/media/qaaSZMnWkufRu/giphy.gif?cid=ecf05e47feu6632wxcjhy41he2nk7ac8f6l4ejnmu313b808&rid=giphy.gif&ct=g"
-            alt=""
-          />
+          <img src={image} alt="" />
         </div>
         <div className="post-footer">
           <SignalCellularAltOutlinedIcon fontSize="small" />
