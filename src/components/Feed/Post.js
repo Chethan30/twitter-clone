@@ -8,7 +8,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import SignalCellularAltOutlinedIcon from "@mui/icons-material/SignalCellularAltOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 
-function Post({ displayName, username, verified, text, image, avatar }) {
+function Post({ displayName, username, verified, text, image, avatar, time }) {
   return (
     <div className="post">
       <div className="post-avatar">
@@ -19,10 +19,12 @@ function Post({ displayName, username, verified, text, image, avatar }) {
           <div className="post-header-text">
             <h3>
               {displayName}
-              <span>{verified && <VerifiedIcon className="post-badge" />}</span>
+              <span>
+                {verified === true && <VerifiedIcon className="post-badge" />}
+              </span>
             </h3>
             <span className="post-username">@{username}</span>
-            <span className="post-time"> · 14h</span>
+            <span className="post-time"> · {time}h</span>
           </div>
           <div className="header-desc">
             <p>{text}</p>

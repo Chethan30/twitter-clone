@@ -1,15 +1,19 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+// import * as dotenv from "dotenv";
+// dotenv.config();
+
+console.log(process.env);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBrQYCW7Z1frQNnoXwP3ZaxPgcy5UbhI7k",
-  authDomain: "twitter-clone-89b98.firebaseapp.com",
-  projectId: "twitter-clone-89b98",
-  storageBucket: "twitter-clone-89b98.appspot.com",
-  messagingSenderId: "722555054413",
-  appId: "1:722555054413:web:8ad191b3f1499ff2f5ef04",
-  measurementId: "G-XCJ12MMKVZ",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

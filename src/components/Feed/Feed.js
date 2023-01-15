@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import db from "../../firebase";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import "./Feed.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
-import { SocialDistanceOutlined } from "@mui/icons-material";
 
 function Feed() {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
 
   // useEffect(() => {
   //   // db.collection("posts").onSnapshot((snapshot) => {
@@ -35,15 +34,17 @@ function Feed() {
       <TweetBox />
 
       {/* Posts on Feed */}
-      {console.log("posts", posts)}
-      {posts?.map((post) => (
+      {console.log("posts", [...posts])}
+      {[...posts].reverse().map((post, index) => (
         <Post
+          key={index}
           displayName={post.data().displayName}
           username={post.data().username}
           verified={post.data().verified}
           text={post.data().text}
           avatar={post.data().avatar}
           image={post.data().image}
+          time={post.data().time}
         />
       ))}
       {/* <Post
